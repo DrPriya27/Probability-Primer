@@ -8,4 +8,3 @@ https://probstats.org/poisson.html
 11 data distribution
 https://www.linkedin.com/posts/avi-chawla_machinelearning-datascience-statistics-activity-7121502219513790464-hOIn/?utm_source=share&utm_medium=member_ios
 
-https://docs.google.com/spreadsheets/d/1aK-xTaa06GEeTUgJDAkgW2j_HxGeWaZ11ws6sMConGE/edit?gid=933076323#gid=933076323
