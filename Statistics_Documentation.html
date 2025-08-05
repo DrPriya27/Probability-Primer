@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Framework - Product Documentation</title>
+    <style>
+        /* Modern, professional styling */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-gray: #f4f6f9;
+            --border-color: #ddd;
+            --code-bg: #f8f8f8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+            font-size: 16px;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 280px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-header p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .nav-item {
+            padding: 12px 20px;
+            border-left: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .nav-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 3px solid var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .sub-nav {
+            padding-left: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .sub-nav .nav-item {
+            padding: 8px 20px;
+        }
+        
+        /* Main Content */
+        .content {
+            flex: 1;
+            padding: 30px;
+            margin-left: 280px;
+            max-width: 1000px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 30px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin: 20px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h3 {
+            color: var(--primary-color);
+            margin: 25px 0 15px;
+        }
+        
+        p, ul, ol {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background-color: var(--code-bg);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            border: 1px solid var(--border-color);
+        }
+        
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            margin: 15px 0;
+        }
+        
+        pre code {
+            border: none;
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        .note {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .warning {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid var(--border-color);
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--light-gray);
+        }
+        
+        /* Demo images */
+        .demo-image {
+            max-width: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 15px 0;
+        }
+        
+        /* Footer */
+        footer {
+            margin: 40px 0 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 10px;
+            }
+            
+            .content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+        
+        /* Button styling */
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Visual elements for statistics */
+        .stat-visual {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        /* Feature comparison table */
+        .feature-table {
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .feature-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .feature-table .feature-name {
+            font-weight: 600;
+        }
+        
+        .feature-check {
+            text-align: center;
+            color: #27ae60;
+        }
+        
+        .feature-x {
+            text-align: center;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Statistics Framework</h1>
+                <p>v1.0.0 Product Documentation</p>
+            </div>
+            
+            <nav>
+                <div class="nav-item active" onclick="scrollToSection('overview')">Overview</div>
+                <div class="nav-item" onclick="scrollToSection('getting-started')">Getting Started</div>
+                <div class="nav-item" onclick="scrollToSection('core-features')">Core Features</div>
+                <div class="sub-nav">
+                    <div class="nav-item" onclick="scrollToSection('descriptive-statistics')">Descriptive Statistics</div>
+                    <div class="nav-item" onclick="scrollToSection('inferential-statistics')">Inferential Statistics</div>
+                    <div class="nav-item" onclick="scrollToSection('sampling')">Sampling Techniques</div>
+                    <div class="nav-item" onclick="scrollToSection('visualization')">Data Visualization</div>
+                </div>
+                <div class="nav-item" onclick="scrollToSection('system-requirements')">System Requirements</div>
+                <div class="nav-item" onclick="scrollToSection('installation')">Installation Guide</div>
+                <div class="nav-item" onclick="scrollToSection('api-reference')">API Reference</div>
+                <div class="nav-item" onclick="scrollToSection('tutorials')">Tutorials</div>
+                <div class="nav-item" onclick="scrollToSection('faqs')">FAQs</div>
+                <div class="nav-item" onclick="scrollToSection('changelog')">Changelog</div>
+                <div class="nav-item" onclick="scrollToSection('support')">Support</div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="content">
+            <div class="section" id="overview">
+                <h2>Overview</h2>
+                <p>Welcome to the <strong>Statistics Framework</strong> documentation. This comprehensive statistical analysis package provides researchers, data scientists, educators, and students with powerful tools for data analysis, visualization, and statistical inference.</p>
+                
+                <p>This framework is designed to support the statistical research workflow from data collection to final analysis and presentation. It integrates seamlessly with existing data science ecosystems while providing advanced statistical capabilities needed in academic and professional environments.</p>
+                
+                <div class="note">
+                    <strong>Note:</strong> This documentation assumes basic familiarity with statistical concepts. For introductory statistics education, please refer to our <a href="Statistics_Tutorial.md">Statistics Tutorial</a>.
+                </div>
+                
+                <h3>Key Benefits</h3>
+                <ul>
+                    <li><strong>Complete Statistical Workflow:</strong> From descriptive statistics to advanced inferential techniques, our framework covers the entire statistical analysis process</li>
+                    <li><strong>Educational Integration:</strong> Designed with teaching and learning in mind, making it ideal for academic environments</li>
+                    <li><strong>Reproducible Research:</strong> Support for literate programming and reproducible analysis workflows</li>
+                    <li><strong>Visualization Excellence:</strong> Sophisticated, publication-ready statistical visualizations</li>
+                    <li><strong>Extensible Architecture:</strong> Easily add custom statistical methods and visualizations</li>
+                </ul>
+                
+                <h3>Framework Structure</h3>
+                <p>The Statistics Framework consists of four core modules:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Module</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Descriptive Statistics</td>
+                            <td>Tools for summarizing and describing data characteristics</td>
+                        </tr>
+                        <tr>
+                            <td>Inferential Statistics</td>
+                            <td>Methods for hypothesis testing, confidence intervals, and statistical modeling</td>
+                        </tr>
+                        <tr>
+                            <td>Data Collection & Sampling</td>
+                            <td>Tools for experimental design and sampling techniques</td>
+                        </tr>
+                        <tr>
+                            <td>Data Visualization</td>
+                            <td>Advanced charting and visualization components for statistical data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section" id="getting-started">
+                <h2>Getting Started</h2>
+                <p>This section helps you quickly set up and begin using the Statistics Framework.</p>
+                
+                <h3>Quick Installation</h3>
+                <p>Install the Statistics Framework using your preferred package manager:</p>
+                
+                <pre><code>npm install statistics-framework
+# or
+pip install statistics-framework</code></pre>
+                
+                <h3>Basic Usage</h3>
+                <p>Here's a simple example to get you started:</p>
+                
+                <pre><code>// Import the framework
+import { DescriptiveStatistics } from 'statistics-framework';
+
+// Sample data
+const data = [78, 85, 92, 67, 73, 88, 90, 76, 85, 79];
+
+// Calculate basic descriptive statistics
+const stats = new DescriptiveStatistics(data);
+console.log("Mean:", stats.mean());
+console.log("Median:", stats.median());
+console.log("Standard Deviation:", stats.standardDeviation());
+
+// Generate a histogram
+const histogram = stats.histogram({ bins: 5 });
+histogram.render('#chart-container');</code></pre>
+                
+                <div class="note">
+                    <p>For Python users, the syntax is similar:</p>
+                    <pre><code>from statistics_framework import DescriptiveStatistics
+
+# Sample data
+data = [78, 85, 92, 67, 73, 88, 90, 76, 85, 79]
+
+# Calculate basic descriptive statistics
+stats = DescriptiveStatistics(data)
+print(f"Mean: {stats.mean()}")
+print(f"Median: {stats.median()}")
+print(f"Standard Deviation: {stats.standard_deviation()}")</code></pre>
+                </div>
+                
+                <h3>First Steps</h3>
+                <ol>
+                    <li>Complete the <a href="#installation">installation</a> process</li>
+                    <li>Try the <a href="#tutorials">basic tutorials</a> to familiarize yourself with the framework</li>
+                    <li>Explore the <a href="#api-reference">API reference</a> for detailed documentation of all available functions</li>
+                    <li>Join our <a href="#support">community forum</a> to connect with other users</li>
+                </ol>
+            </div>
+            
+            <div class="section" id="core-features">
+                <h2>Core Features</h2>
+                <p>The Statistics Framework provides a comprehensive set of features to support statistical analysis for research, education, and data science applications.</p>
+                
+                <table class="feature-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Basic Edition</th>
+                            <th>Professional</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Descriptive Statistics</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Data Visualization</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Basic Hypothesis Tests</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Advanced Statistical Tests</td>
+                            <td class="feature-x">✗</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Sampling Techniques</td>
+                            <td class="feature-x">✗</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Educational Resources</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Advanced Visualization</td>
+                            <td class="feature-x">✗</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Export Capabilities</td>
+                            <td class="feature-x">✗</td>
+                            <td class="feature-check">✓</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Enterprise Integration</td>
+                            <td class="feature-x">✗</td>
+                            <td class="feature-x">✗</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Priority Support</td>
+                            <td class="feature-x">✗</td>
+                            <td class="feature-x">✗</td>
+                            <td class="feature-check">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section" id="descriptive-statistics">
+                <h2>Descriptive Statistics</h2>
+                <p>The Descriptive Statistics module provides comprehensive tools for summarizing and understanding your data's central tendencies, dispersion, and distribution characteristics.</p>
+                
+                <h3>Measures of Central Tendency</h3>
+                <p>Calculate the standard measures to identify the center of your data distribution:</p>
+                
+                <pre><code>const stats = new DescriptiveStatistics(data);
+
+// Measures of central tendency
+const mean = stats.mean();
+const median = stats.median();
+const mode = stats.mode();
+const geometricMean = stats.geometricMean();
+const harmonicMean = stats.harmonicMean();
+
+// For weighted calculations
+const weightedMean = stats.weightedMean(weights);</code></pre>
+                
+                <h3>Measures of Dispersion</h3>
+                <p>Quantify the spread and variability in your data:</p>
+                
+                <pre><code>// Measures of dispersion
+const range = stats.range();
+const variance = stats.variance();
+const stdDev = stats.standardDeviation();
+const IQR = stats.interquartileRange();
+const CV = stats.coefficientOfVariation();</code></pre>
+                
+                <h3>Distribution Analysis</h3>
+                <p>Explore the shape and characteristics of your data distribution:</p>
+                
+                <pre><code>// Distribution characteristics
+const skewness = stats.skewness();
+const kurtosis = stats.kurtosis();
+
+// Percentiles and quantiles
+const median = stats.percentile(50);
+const q1 = stats.percentile(25);
+const q3 = stats.percentile(75);
+
+// Custom quantiles
+const deciles = stats.quantiles(10); // Divide into 10 equal parts</code></pre>
+                
+                <h3>Summary Statistics</h3>
+                <p>Generate comprehensive statistical summaries with a single function call:</p>
+                
+                <pre><code>// Complete summary
+const summary = stats.summarize();
+console.table(summary);
+
+// Five-number summary
+const fiveNum = stats.fiveNumberSummary();</code></pre>
+                
+                <div class="stat-visual">
+                    <p><strong>Five-Number Summary Example</strong></p>
+                    <p>Min: 67 | Q1: 76 | Median: 84 | Q3: 89 | Max: 94</p>
+                    <div style="height: 20px; width: 80%; margin: 10px auto; background: linear-gradient(to right, #e74c3c, #3498db);"></div>
+                </div>
+                
+                <h3>Frequency Analysis</h3>
+                <p>Analyze how often values appear in your dataset:</p>
+                
+                <pre><code>// Frequency tables
+const freqTable = stats.frequencyTable();
+const relFreq = stats.relativeFrequencyTable();
+const cumFreq = stats.cumulativeFrequencyTable();</code></pre>
+            </div>
+            
+            <div class="section" id="inferential-statistics">
+                <h2>Inferential Statistics</h2>
+                <p>The Inferential Statistics module provides tools for drawing conclusions about populations based on sample data through hypothesis testing and confidence interval estimation.</p>
+                
+                <h3>Hypothesis Testing</h3>
+                <p>Conduct various hypothesis tests to evaluate claims about your data:</p>
+                
+                <pre><code>import { HypothesisTests } from 'statistics-framework';
+
+// One-sample t-test
+const tTest = new HypothesisTests.OneSampleTTest({
+  data: sampleData,
+  populationMean: 75,
+  alpha: 0.05,
+  alternative: 'two-sided'
+});
+
+const results = tTest.perform();
+console.log(results);
+// Output:
+// {
+//   testStatistic: 2.31,
+//   pValue: 0.025,
+//   confidenceInterval: [76.2, 88.4],
+//   decision: 'Reject H₀',
+//   ...
+// }</code></pre>
+                
+                <h3>Supported Tests</h3>
+                <p>Our framework includes implementations of the most commonly used statistical tests:</p>
+                
+                <ul>
+                    <li><strong>Parametric Tests</strong>:
+                        <ul>
+                            <li>One and Two-sample t-tests</li>
+                            <li>Paired t-test</li>
+                            <li>One and Two-way ANOVA</li>
+                            <li>ANCOVA</li>
+                        </ul>
+                    </li>
+                    <li><strong>Non-parametric Tests</strong>:
+                        <ul>
+                            <li>Mann-Whitney U Test</li>
+                            <li>Wilcoxon Signed-Rank Test</li>
+                            <li>Kruskal-Wallis Test</li>
+                            <li>Friedman Test</li>
+                        </ul>
+                    </li>
+                    <li><strong>Correlation and Association Tests</strong>:
+                        <ul>
+                            <li>Pearson's Correlation Test</li>
+                            <li>Spearman's Rank Correlation</li>
+                            <li>Chi-Square Test of Independence</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Confidence Intervals</h3>
+                <p>Calculate confidence intervals to estimate population parameters:</p>
+                
+                <pre><code>import { ConfidenceIntervals } from 'statistics-framework';
+
+// Mean confidence interval
+const ci = new ConfidenceIntervals.MeanCI({
+  data: sampleData,
+  confidenceLevel: 0.95
+});
+
+const interval = ci.calculate();
+console.log(`95% CI: [${interval.lower.toFixed(2)}, ${interval.upper.toFixed(2)}]`);
+console.log(`Margin of Error: ${interval.marginOfError.toFixed(2)}`);
+
+// Proportion confidence interval
+const propCI = new ConfidenceIntervals.ProportionCI({
+  successes: 42,
+  trials: 100,
+  confidenceLevel: 0.95
+});
+
+const propInterval = propCI.calculate();</code></pre>
+                
+                <div class="note">
+                    <p><strong>Power Analysis</strong>: Our framework also includes tools for statistical power analysis to help determine optimal sample sizes for your studies.</p>
+                    <pre><code>import { PowerAnalysis } from 'statistics-framework';
+
+const sampleSize = PowerAnalysis.tTest({
+  effectSize: 0.5,  // Medium effect
+  power: 0.8,       // 80% power
+  alpha: 0.05,      // 5% significance
+  alternative: 'two-sided'
+});
+
+console.log(`Required sample size: ${sampleSize}`);</code></pre>
+                </div>
+            </div>
+            
+            <div class="section" id="sampling">
+                <h2>Sampling Techniques</h2>
+                <p>The Sampling module provides implementations of various probability and non-probability sampling methods essential for statistical research.</p>
+                
+                <h3>Probability Sampling</h3>
+                <p>Generate statistically valid random samples from your population:</p>
+                
+                <pre><code>import { Sampling } from 'statistics-framework';
+
+// Simple Random Sampling
+const population = [...Array(10000).keys()]; // Population of 10,000 elements
+const randomSample = Sampling.simpleRandomSample({
+  population,
+  sampleSize: 500
+});
+
+// Stratified Random Sampling
+const strata = {
+  'group1': population.filter(x => x < 3000),
+  'group2': population.filter(x => x >= 3000 && x < 7000),
+  'group3': population.filter(x => x >= 7000)
+};
+
+const stratifiedSample = Sampling.stratifiedSample({
+  strata,
+  sampleSizes: {
+    'group1': 100,
+    'group2': 200,
+    'group3': 100
+  }
+});</code></pre>
+                
+                <h3>Advanced Sampling Techniques</h3>
+                <p>Implement more complex sampling strategies:</p>
+                
+                <pre><code>// Systematic Sampling
+const systematicSample = Sampling.systematicSample({
+  population,
+  sampleSize: 500
+});
+
+// Cluster Sampling
+const clusters = []; // Array of cluster arrays
+for (let i = 0; i < 100; i++) {
+  clusters.push(population.slice(i*100, (i+1)*100));
+}
+
+const clusterSample = Sampling.clusterSample({
+  clusters,
+  numberOfClusters: 10
+});</code></pre>
+                
+                <h3>Sample Size Calculation</h3>
+                <p>Determine the appropriate sample size for your study:</p>
+                
+                <pre><code>// Sample size for proportion
+const propSampleSize = Sampling.sampleSizeForProportion({
+  marginOfError: 0.05,
+  confidenceLevel: 0.95,
+  expectedProportion: 0.5
+});
+
+// Sample size for mean
+const meanSampleSize = Sampling.sampleSizeForMean({
+  marginOfError: 2,
+  confidenceLevel: 0.95,
+  standardDeviation: 10
+});</code></pre>
+                
+                <div class="warning">
+                    <strong>Important:</strong> Always consider ethical implications when collecting samples from human populations. Ensure your sampling methods comply with relevant research ethics guidelines and privacy regulations.
+                </div>
+            </div>
+            
+            <div class="section" id="visualization">
+                <h2>Data Visualization</h2>
+                <p>The Visualization module provides tools for creating statistical charts and graphs to communicate your findings effectively.</p>
+                
+                <h3>Basic Visualizations</h3>
+                <p>Create fundamental statistical visualizations:</p>
+                
+                <pre><code>import { Visualization } from 'statistics-framework';
+
+// Create a histogram
+const histogram = new Visualization.Histogram({
+  data: sampleData,
+  bins: 10,
+  title: 'Sample Distribution',
+  xLabel: 'Value',
+  yLabel: 'Frequency'
+});
+
+// Render to a container element
+histogram.render('#histogram-container');
+
+// Create a box plot
+const boxPlot = new Visualization.BoxPlot({
+  data: [sampleData1, sampleData2, sampleData3],
+  labels: ['Group A', 'Group B', 'Group C'],
+  title: 'Comparison of Distributions'
+});
+
+boxPlot.render('#boxplot-container');</code></pre>
+                
+                <h3>Advanced Statistical Visualizations</h3>
+                <p>Generate sophisticated statistical charts:</p>
+                
+                <pre><code>// Q-Q Plot for normality assessment
+const qqPlot = new Visualization.QQPlot({
+  data: sampleData,
+  title: 'Normal Q-Q Plot'
+});
+
+qqPlot.render('#qqplot-container');
+
+// Forest plot for meta-analysis
+const forestPlot = new Visualization.ForestPlot({
+  effects: [0.3, 0.5, -0.1, 0.4, 0.2],
+  confidenceIntervals: [
+    [0.1, 0.5],
+    [0.2, 0.8],
+    [-0.3, 0.1],
+    [0.2, 0.6],
+    [0.0, 0.4]
+  ],
+  labels: ['Study 1', 'Study 2', 'Study 3', 'Study 4', 'Study 5']
+});</code></pre>
+                
+                <div class="stat-visual">
+                    <p><strong>Visualization Examples</strong></p>
+                    <img src="https://i.imgur.com/ZKDRx12.png" alt="Visualization example" class="demo-image">
+                </div>
+                
+                <h3>Customization Options</h3>
+                <p>Extensive customization is available for all visualizations:</p>
+                
+                <pre><code>// Customized histogram
+const customHistogram = new Visualization.Histogram({
+  data: sampleData,
+  bins: 10,
+  title: 'Custom Histogram',
+  xLabel: 'Value',
+  yLabel: 'Frequency',
+  colors: {
+    bars: '#3498db',
+    mean: '#e74c3c',
+    median: '#2ecc71'
+  },
+  showStatistics: true,  // Display mean, median, etc.
+  smoothed: true,        // Add density curve
+  responsiveResize: true // Adapt to container size
+});
+
+// Export options
+customHistogram.export({
+  format: 'png',
+  width: 800,
+  height: 600,
+  filename: 'histogram-analysis'
+});</code></pre>
+            </div>
+            
+            <div class="section" id="system-requirements">
+                <h2>System Requirements</h2>
+                <p>The Statistics Framework is designed to work across multiple platforms with minimal system requirements.</p>
+                
+                <h3>Supported Platforms</h3>
+                <ul>
+                    <li><strong>Operating Systems</strong>:
+                        <ul>
+                            <li>Windows 10 or later</li>
+                            <li>macOS 10.14 (Mojave) or later</li>
+                            <li>Linux (major distributions)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Web Browsers</strong> (for web integration):
+                        <ul>
+                            <li>Chrome 70+</li>
+                            <li>Firefox 65+</li>
+                            <li>Safari 12+</li>
+                            <li>Edge 79+</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Hardware Requirements</h3>
+                <p>Minimum requirements:</p>
+                <ul>
+                    <li>Processor: Dual-core 2.0 GHz or faster</li>
+                    <li>RAM: 4 GB (8 GB recommended for larger datasets)</li>
+                    <li>Disk space: 250 MB for installation</li>
+                </ul>
+                
+                <h3>Software Dependencies</h3>
+                <p>The framework has the following dependencies:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dependency</th>
+                            <th>Version</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Node.js</td>
+                            <td>14.x or later</td>
+                            <td>JavaScript runtime (for JS version)</td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td>3.7 or later</td>
+                            <td>Python runtime (for Python version)</td>
+                        </tr>
+                        <tr>
+                            <td>NumPy</td>
+                            <td>1.18 or later</td>
+                            <td>Numerical computations (Python version)</td>
+                        </tr>
+                        <tr>
+                            <td>D3.js</td>
+                            <td>6.x or later</td>
+                            <td>Visualization engine</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="note">
+                    <p><strong>Performance Note:</strong> For large datasets (>1 million observations), we recommend at least 16 GB of RAM and a quad-core processor for optimal performance.</p>
+                </div>
+            </div>
+            
+            <div class="section" id="installation">
+                <h2>Installation Guide</h2>
+                <p>Follow these steps to install the Statistics Framework for your environment.</p>
+                
+                <h3>JavaScript Installation</h3>
+                <p>Install the framework using npm:</p>
+                
+                <pre><code># Using npm
+npm install statistics-framework
+
+# Using yarn
+yarn add statistics-framework</code></pre>
+                
+                <p>For browser-based applications, include the CDN link:</p>
+                
+                <pre><code>&lt;script src="https://cdn.statistics-framework.org/v1.0.0/statistics-framework.min.js"&gt;&lt;/script&gt;</code></pre>
+                
+                <h3>Python Installation</h3>
+                <p>Install using pip:</p>
+                
+                <pre><code>pip install statistics-framework
+
+# For specific version
+pip install statistics-framework==1.0.0</code></pre>
+                
+                <p>Or using conda:</p>
+                
+                <pre><code>conda install -c statistics-framework statistics-framework</code></pre>
+                
+                <h3>Verifying Installation</h3>
+                <p>Verify that the installation was successful:</p>
+                
+                <pre><code>// JavaScript
+import { version } from 'statistics-framework';
+console.log(`Statistics Framework version: ${version}`);
+
+# Python
+from statistics_framework import __version__
+print(f"Statistics Framework version: {__version__}")</code></pre>
+                
+                <h3>Docker Installation</h3>
+                <p>For containerized environments, use our Docker image:</p>
+                
+                <pre><code>docker pull statistics-framework/statistics:1.0.0
+docker run -p 8080:8080 statistics-framework/statistics:1.0.0</code></pre>
+                
+                <div class="note">
+                    <p>Visit <code>http://localhost:8080</code> after running the Docker container to access the interactive web interface.</p>
+                </div>
+                
+                <h3>Troubleshooting</h3>
+                <p>If you encounter installation issues, check the following:</p>
+                
+                <ul>
+                    <li>Ensure you have the correct permissions for installation</li>
+                    <li>Verify that you meet the minimum system requirements</li>
+                    <li>Check for conflicts with existing packages</li>
+                    <li>Review our <a href="#faqs">FAQ section</a> for common issues</li>
+                </ul>
+            </div>
+            
+            <div class="section" id="api-reference">
+                <h2>API Reference</h2>
+                <p>This section provides a brief overview of the main API components. For detailed documentation, please refer to our <a href="#">complete API reference</a>.</p>
+                
+                <h3>Core Classes</h3>
+                <p>The framework is organized around the following core classes:</p>
+                
+                <pre><code>// Main framework components
+import {
+  DescriptiveStatistics,
+  InferentialStatistics,
+  Sampling,
+  Visualization,
+  DataSet
+} from 'statistics-framework';</code></pre>
+                
+                <h3>DataSet Class</h3>
+                <p>The foundation for data management in the framework:</p>
+                
+                <pre><code>// Create a dataset
+const dataset = new DataSet(data, {
+  variableTypes: {
+    'age': 'numeric',
+    'gender': 'categorical',
+    'score': 'numeric'
+  },
+  missingValues: ['NA', '']
+});
+
+// Basic operations
+dataset.summary();
+dataset.head(5);  // First 5 records
+dataset.tail(5);  // Last 5 records
+dataset.filter(row => row.age > 30);
+dataset.select(['age', 'score']);</code></pre>
+                
+                <h3>Major API Namespaces</h3>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Namespace</th>
+                            <th>Description</th>
+                            <th>Key Methods</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DescriptiveStatistics</td>
+                            <td>Methods for summarizing data</td>
+                            <td>mean(), median(), standardDeviation(), summarize()</td>
+                        </tr>
+                        <tr>
+                            <td>HypothesisTests</td>
+                            <td>Statistical tests</td>
+                            <td>tTest(), chiSquareTest(), anovaTest()</td>
+                        </tr>
+                        <tr>
+                            <td>ConfidenceIntervals</td>
+                            <td>Interval estimation</td>
+                            <td>meanCI(), proportionCI(), differenceCI()</td>
+                        </tr>
+                        <tr>
+                            <td>Sampling</td>
+                            <td>Sampling methods</td>
+                            <td>randomSample(), stratifiedSample(), clusterSample()</td>
+                        </tr>
+                        <tr>
+                            <td>Visualization</td>
+                            <td>Charts and graphs</td>
+                            <td>histogram(), boxPlot(), scatterPlot(), qqPlot()</td>
+                        </tr>
+                        <tr>
+                            <td>Regression</td>
+                            <td>Statistical modeling</td>
+                            <td>linearRegression(), logisticRegression(), multipleRegression()</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="note">
+                    <p>The API is designed to be consistent across both JavaScript and Python implementations, with appropriate language-specific idioms (camelCase for JavaScript, snake_case for Python).</p>
+                </div>
+            </div>
+            
+            <div class="section" id="tutorials">
+                <h2>Tutorials</h2>
+                <p>Learn how to use the Statistics Framework with these step-by-step tutorials.</p>
+                
+                <h3>Basic Tutorials</h3>
+                <ul>
+                    <li><a href="#">Getting Started with the Statistics Framework</a></li>
+                    <li><a href="#">Descriptive Statistics: Summarizing Your Data</a></li>
+                    <li><a href="#">Creating Your First Statistical Visualization</a></li>
+                    <li><a href="#">Basic Hypothesis Testing</a></li>
+                </ul>
+                
+                <h3>Intermediate Tutorials</h3>
+                <ul>
+                    <li><a href="#">Working with Large Datasets</a></li>
+                    <li><a href="#">Advanced Sampling Techniques</a></li>
+                    <li><a href="#">Implementing Custom Statistical Tests</a></li>
+                    <li><a href="#">Creating Publication-Ready Visualizations</a></li>
+                </ul>
+                
+                <h3>Advanced Tutorials</h3>
+                <ul>
+                    <li><a href="#">Building Statistical Analysis Pipelines</a></li>
+                    <li><a href="#">Integrating with Machine Learning Workflows</a></li>
+                    <li><a href="#">Extending the Framework with Custom Components</a></li>
+                    <li><a href="#">Performance Optimization for Large-Scale Analysis</a></li>
+                </ul>
+                
+                <div class="note">
+                    <p>All tutorials include downloadable example code and datasets to help you follow along.</p>
+                </div>
+                
+                <h3>Video Tutorials</h3>
+                <p>Access our video tutorial series on our <a href="#">YouTube channel</a>, covering:</p>
+                
+                <ul>
+                    <li>Complete Framework Introduction (45 minutes)</li>
+                    <li>Statistical Analysis Workflows (4-part series)</li>
+                    <li>Advanced Visualization Techniques (6-part series)</li>
+                    <li>Integration with Data Science Ecosystems (3-part series)</li>
+                </ul>
+            </div>
+            
+            <div class="section" id="faqs">
+                <h2>Frequently Asked Questions</h2>
+                
+                <h3>General Questions</h3>
+                
+                <p><strong>Q: Is the Statistics Framework open source?</strong></p>
+                <p>A: Yes, the core framework is available under the MIT license. Enterprise features are available with a commercial license.</p>
+                
+                <p><strong>Q: Can I use the framework in commercial applications?</strong></p>
+                <p>A: Yes, the framework can be used in commercial applications. Enterprise users should contact our licensing team for volume licensing options.</p>
+                
+                <p><strong>Q: How often is the framework updated?</strong></p>
+                <p>A: We release minor updates approximately every 2-3 months and major versions annually. Security patches are released as needed.</p>
+                
+                <h3>Technical Questions</h3>
+                
+                <p><strong>Q: What is the maximum dataset size the framework can handle?</strong></p>
+                <p>A: The framework is optimized for datasets up to 10 million observations. For larger datasets, we recommend using our streaming API or big data connectors.</p>
+                
+                <p><strong>Q: Does the framework support parallel processing?</strong></p>
+                <p>A: Yes, many operations can utilize multiple CPU cores. This feature is available in the Professional and Enterprise editions.</p>
+                
+                <p><strong>Q: Can I integrate the framework with Python's scientific ecosystem?</strong></p>
+                <p>A: Yes, the Python version integrates seamlessly with NumPy, Pandas, and Matplotlib, allowing you to use familiar APIs.</p>
+                
+                <h3>Feature Questions</h3>
+                
+                <p><strong>Q: Does the framework support Bayesian statistics?</strong></p>
+                <p>A: Yes, Bayesian analysis capabilities are available in the Professional and Enterprise editions.</p>
+                
+                <p><strong>Q: Can I export visualizations for publication?</strong></p>
+                <p>A: Yes, all visualizations can be exported in various formats (PNG, SVG, PDF) with publication-quality resolution.</p>
+                
+                <p><strong>Q: Is there support for time series analysis?</strong></p>
+                <p>A: Yes, time series analysis features are included in the Professional and Enterprise editions, including forecasting and seasonal decomposition.</p>
+                
+                <div class="note">
+                    <p>If your question isn't answered here, please check our <a href="#">comprehensive documentation</a> or contact our <a href="#support">support team</a>.</p>
+                </div>
+            </div>
+            
+            <div class="section" id="changelog">
+                <h2>Changelog</h2>
+                <p>Track the development history of the Statistics Framework.</p>
+                
+                <h3>Version 1.0.0 (Current)</h3>
+                <p><strong>Released:</strong> August 5, 2025</p>
+                <ul>
+                    <li>Initial public release with complete feature set</li>
+                    <li>Four core modules: Descriptive Statistics, Inferential Statistics, Sampling, Visualization</li>
+                    <li>Support for JavaScript and Python environments</li>
+                    <li>Comprehensive documentation and tutorials</li>
+                </ul>
+                
+                <h3>Version 0.9.2 (Beta)</h3>
+                <p><strong>Released:</strong> June 15, 2025</p>
+                <ul>
+                    <li>Performance optimizations for large datasets</li>
+                    <li>Added support for 5 additional statistical tests</li>
+                    <li>Improved visualization customization options</li>
+                    <li>Bug fixes and stability improvements</li>
+                </ul>
+                
+                <h3>Version 0.9.0 (Beta)</h3>
+                <p><strong>Released:</strong> May 1, 2025</p>
+                <ul>
+                    <li>First beta release with feature-complete API</li>
+                    <li>Added advanced visualization capabilities</li>
+                    <li>Implemented all planned hypothesis tests</li>
+                    <li>Expanded educational resources</li>
+                </ul>
+                
+                <h3>Version 0.5.0 (Alpha)</h3>
+                <p><strong>Released:</strong> February 10, 2025</p>
+                <ul>
+                    <li>First alpha release with core functionality</li>
+                    <li>Basic descriptive statistics implementation</li>
+                    <li>Fundamental visualization capabilities</li>
+                    <li>Limited inferential statistics</li>
+                </ul>
+                
+                <h3>Future Development</h3>
+                <p>Planned for upcoming releases:</p>
+                <ul>
+                    <li>Enhanced machine learning integration (v1.1)</li>
+                    <li>Expanded Bayesian analysis capabilities (v1.2)</li>
+                    <li>Interactive notebook integration (v1.2)</li>
+                    <li>Big data connectors for distributed processing (v1.3)</li>
+                </ul>
+            </div>
+            
+            <div class="section" id="support">
+                <h2>Support</h2>
+                <p>Get help with the Statistics Framework through our various support channels.</p>
+                
+                <h3>Documentation</h3>
+                <ul>
+                    <li><a href="#">Online Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Tutorials & Examples</a></li>
+                    <li><a href="#">User Guides</a></li>
+                </ul>
+                
+                <h3>Community Support</h3>
+                <ul>
+                    <li><a href="#">Stack Overflow</a> - Tag your questions with <code>statistics-framework</code></li>
+                    <li><a href="#">GitHub Issues</a> - Report bugs and request features</li>
+                    <li><a href="#">Community Forum</a> - Discuss with other users</li>
+                    <li><a href="#">Discord Channel</a> - Real-time chat with community members</li>
+                </ul>
+                
+                <h3>Professional Support</h3>
+                <p>Enterprise customers receive priority support:</p>
+                <ul>
+                    <li>Dedicated support engineers</li>
+                    <li>Priority issue resolution</li>
+                    <li>Implementation consulting</li>
+                    <li>Custom feature development</li>
+                </ul>
+                
+                <div class="note">
+                    <p>Contact our support team at <a href="mailto:support@statistics-framework.org">support@statistics-framework.org</a> or call +1 (555) 123-4567 during business hours (9 AM - 5 PM EST, Monday-Friday).</p>
+                </div>
+                
+                <h3>Training Resources</h3>
+                <ul>
+                    <li>On-demand video courses</li>
+                    <li>Live webinars (monthly)</li>
+                    <li>Certification program</li>
+                    <li>Custom corporate training</li>
+                </ul>
+            </div>
+            
+            <footer>
+                <p>Statistics Framework v1.0.0 | &copy; 2025 Statistics Framework Team | <a href="#">Documentation</a> | <a href="#">GitHub</a> | <a href="#">Support</a></p>
+            </footer>
+        </main>
+    </div>
+    
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update active nav item
+                const navItems = document.querySelectorAll('.nav-item');
+                navItems.forEach(item => item.classList.remove('active'));
+                document.querySelector(`.nav-item[onclick="scrollToSection('${id}')"]`).classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
