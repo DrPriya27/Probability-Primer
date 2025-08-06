@@ -9,8 +9,7 @@
 6. [Permutations](#6-permutations)
 7. [Combinations](#7-combinations)
 8. [Detailed Explanation: Events in Probability](#8-detailed-explanation-events-in-probability)
-9. [Examination Practice Problems](#examination-practice-problems)
-
+9. [Examination Practice Problems](#9-examination-practice-problems)
 ---
 
 ## 1. Introduction to Probability
@@ -1153,6 +1152,7 @@ In a game, Player 1 wins 60% of the time against Player 2. They play a best-of-5
 --- 
 
 *This tutorial provides a comprehensive foundation in probability theory. Continue practicing with diverse problems to strengthen your understanding and application skills.*
+
 
 
 
