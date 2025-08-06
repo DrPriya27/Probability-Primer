@@ -853,11 +853,12 @@ The **complement** of event A (written as \( A' \)) is the event that A does **n
 | Dependent Events       | One affects the probability of the other         | Drawing cards without replacement            |                                  |
 | Complementary Events   | Event and its complement cover all possibilities | Getting a 6 or not getting a 6 on a die      | \( P(A) + P(A') = 1 \)           |
 
----
+
 
 **Tip:**  
 Understanding the types of events and their relationships is crucial for solving probability problems accurately.
 
+---
 
 ## 9. Examination Practice Problems
 
@@ -1152,6 +1153,7 @@ In a game, Player 1 wins 60% of the time against Player 2. They play a best-of-5
 --- 
 
 *This tutorial provides a comprehensive foundation in probability theory. Continue practicing with diverse problems to strengthen your understanding and application skills.*
+
 
 
 
