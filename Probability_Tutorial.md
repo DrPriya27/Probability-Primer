@@ -381,11 +381,8 @@ If events are not independent (i.e., the outcome of one affects the other), you 
 
 
 
-## 5. More Real-Life Examples & Applications
+## 5. More Real-World Examples & Applications
 
-Probability, permutations, and combinations are used in many real-world scenarios. Here are detailed examples for each:
-
-## 9. More Real-World Examples & Applications
 
 ### Probability
 
@@ -420,141 +417,6 @@ Probability, permutations, and combinations are used in many real-world scenario
     *Example:* Assessing the probability of achieving a target return in a diversified portfolio.
 
 ---
-
-### Permutation (Order Matters)
-
-1. **Password/OTP Generation**  
-    The number of ways to form a 4-digit PIN using digits 0–9, with no repetition:  
-    \( 10 \times 9 \times 8 \times 7 = 5040 \) possible PINs.
-    *Example:* Generating unique 6-character alphanumeric passwords for user accounts.
-    *Example:* Creating different arrangements of letters for a secure access code.
-
-2. **Seating Arrangements**  
-    The number of ways to seat 5 people in 5 chairs:  
-    \( 5! = 120 \) ways.
-    *Example:* Arranging 7 guests around a dinner table in a specific order.
-    *Example:* Assigning seats to students in an exam hall where each seat is unique.
-
-3. **Ranking in Sports or Exams**  
-    Awarding gold, silver, and bronze medals among 10 athletes:  
-    \( P(10, 3) = 10 \times 9 \times 8 = 720 \) ways.
-    *Example:* Determining the possible finishing orders for the top 4 runners in a race.
-    *Example:* Assigning first, second, and third place in a science fair with 12 participants.
-
-4. **Book Arrangement on a Shelf**  
-    Arranging 8 different books on a bookshelf:  
-    \( 8! = 40,320 \) different possible arrangements.
-    *Example:* Organizing 10 files in a filing cabinet in a specific sequence.
-    *Example:* Placing 6 trophies on a display shelf in different orders.
-
-5. **Race Starting Positions**  
-    Assigning 12 cars to different starting positions in a race:  
-    \( 12! = 479,001,600 \) possible starting grids.
-    *Example:* Assigning 15 runners to lanes in a track event.
-    *Example:* Determining the order of speakers in a conference with 9 presenters.
-
----
-
-### Combination (Order Does Not Matter)
-
-1. **Lottery and Raffles**  
-    Choosing 6 numbers out of 49 (order doesn't matter):  
-    \( C(49, 6) = 13,983,816 \) combinations.
-    *Example:* Selecting 5 winning tickets from a pool of 100 in a raffle.
-    *Example:* Picking 3 colors from a set of 12 for a design project.
-
-2. **Forming Committees**  
-    Selecting 3 students from a class of 10:  
-    \( C(10, 3) = 120 \) combinations.
-    *Example:* Choosing 4 employees from a team of 15 for a project group.
-    *Example:* Selecting 2 representatives from 8 candidates for a meeting.
-
-3. **Selecting Dishes in a Buffet**  
-    Choosing any 3 dishes from a menu of 8, regardless of order:  
-    \( C(8, 3) = 56 \) possible selections.
-    *Example:* Picking 5 toppings for a pizza from 10 available options.
-    *Example:* Choosing 2 desserts from a list of 7 at a restaurant.
-
-4. **Card Games**  
-    Dealing a 5-card poker hand from a standard 52-card deck:  
-    \( C(52, 5) = 2,598,960 \) possible hands.
-    *Example:* Selecting 13 cards for a bridge hand from a 52-card deck.
-    *Example:* Drawing 4 cards from a deck to form a special set in a game.
-
-5. **Team Selection**  
-    Selecting 11 players from a squad of 23 for a soccer match:  
-    \( C(23, 11) = 1,352,078 \) possible team combinations.
-    *Example:* Choosing 6 members from a club of 20 for a quiz team.
-    *Example:* Forming a jury of 12 from a pool of 30 candidates.
-
----
-
-### 1. Probability
-
-**a. Weather Forecasting**  
-Meteorologists use probability to predict weather events.
-- *Example 1:* A 70% chance of rain means that, in similar conditions, rain occurred 70 out of 100 times.
-- *Example 2:* The probability of a hurricane making landfall in a region is estimated using historical data and climate models.
-- *Example 3:* The chance of snowfall on a specific day is calculated based on temperature, humidity, and past records.
-
-**b. Medical Testing**  
-Doctors use probability to interpret test results and make diagnoses.
-- *Example 1:* If a disease affects 2% of people and a test is 98% accurate, probability helps estimate the chance a person actually has the disease after a positive result (Bayes’ theorem).
-- *Example 2:* The probability of a false positive in cancer screening is calculated using test specificity and disease prevalence.
-- *Example 3:* Clinical trials use probability to determine the likelihood of side effects from a new medication.
-
-**c. Insurance**  
-Insurance companies use probability to assess risk and set premiums.
-- *Example 1:* The probability of a car accident is calculated based on age, driving history, and location.
-- *Example 2:* Life insurance rates are set using the probability of certain health events occurring within a given time frame.
-- *Example 3:* Homeowner insurance premiums are determined by the probability of events like fire, theft, or natural disasters.
-
----
-
-### 2. Permutations (Order Matters)
-
-**a. Password Generation**  
-Order matters when creating secure passwords or PINs.
-- *Example 1:* The number of 4-digit PINs using digits 0–9 with no repetition: \(10 \times 9 \times 8 \times 7 = 5040\).
-- *Example 2:* Generating unique 6-character alphanumeric passwords for user accounts.
-- *Example 3:* Arranging 5 different symbols to create a unique access code.
-
-**b. Seating Arrangements**  
-Arranging people or objects in a specific order.
-- *Example 1:* 5 people can be seated in 5 chairs in \(5! = 120\) ways.
-- *Example 2:* Assigning 8 students to 8 seats in an exam hall: \(8! = 40,320\) ways.
-- *Example 3:* Arranging 4 trophies on a shelf: \(4! = 24\) possible orders.
-
-**c. Sports Rankings**  
-Order matters in awarding positions or medals.
-- *Example 1:* Awarding gold, silver, and bronze among 10 athletes: \(P(10, 3) = 720\) ways.
-- *Example 2:* Determining the finishing order of the top 3 runners in a race with 12 participants.
-- *Example 3:* Assigning first, second, and third place in a science fair with 7 projects.
-
----
-
-### 3. Combinations (Order Does Not Matter)
-
-**a. Lottery and Raffles**  
-Selecting winners where order is irrelevant.
-- *Example 1:* Choosing 6 numbers out of 49 in a lottery: \(C(49, 6) = 13,983,816\) combinations.
-- *Example 2:* Picking 3 winning tickets from a pool of 100 in a raffle: \(C(100, 3) = 161,700\).
-- *Example 3:* Selecting 2 colors from 8 available for a design project: \(C(8, 2) = 28\).
-
-**b. Forming Committees**  
-Selecting groups or teams.
-- *Example 1:* Choosing 4 members from a club of 15 for a project group: \(C(15, 4) = 1365\).
-- *Example 2:* Selecting 2 representatives from 10 candidates for a meeting: \(C(10, 2) = 45\).
-- *Example 3:* Forming a jury of 12 from a pool of 30 candidates: \(C(30, 12)\).
-
-**c. Card Games**  
-Dealing hands where arrangement does not matter.
-- *Example 1:* Dealing a 5-card poker hand from a 52-card deck: \(C(52, 5) = 2,598,960\).
-- *Example 2:* Drawing 13 cards for a bridge hand: \(C(52, 13)\).
-- *Example 3:* Selecting 4 cards from a deck for a special set in a game: \(C(52, 4) = 270,725\).
-
----
-
 
 ## 6. Permutations
 
@@ -1290,6 +1152,7 @@ In a game, Player 1 wins 60% of the time against Player 2. They play a best-of-5
 --- 
 
 *This tutorial provides a comprehensive foundation in probability theory. Continue practicing with diverse problems to strengthen your understanding and application skills.*
+
 
 
 
