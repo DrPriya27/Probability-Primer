@@ -544,6 +544,10 @@ There are **24** different words (arrangements) that can be formed using all the
 
     - **Special Case – All elements are used:**  
         - If we use all \( n \) elements (\( r = n \)): \( n! \) permutations
+          Why?
+            For the first position, you have ( n ) choices.
+            For the second position, you have ( n-1 ) choices (since one is already used).
+            For the third, ( n-2 ), and so on, until all positions are filled.
         - **Example 1:**  
             How many ways can 6 books be arranged on a shelf?  
             Solution: \( 6! = 720 \) ways.
@@ -1152,6 +1156,7 @@ In a game, Player 1 wins 60% of the time against Player 2. They play a best-of-5
 --- 
 
 *This tutorial provides a comprehensive foundation in probability theory. Continue practicing with diverse problems to strengthen your understanding and application skills.*
+
 
 
 
