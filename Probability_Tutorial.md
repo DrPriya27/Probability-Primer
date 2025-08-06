@@ -1,4 +1,4 @@
-# Fundamentals of Probability - Complete Tutorial
+# Fundamentals of Probability
 
 ## Table of Contents
 1. [Introduction to Probability](#1-introduction-to-probability)
@@ -1152,6 +1152,7 @@ In a game, Player 1 wins 60% of the time against Player 2. They play a best-of-5
 --- 
 
 *This tutorial provides a comprehensive foundation in probability theory. Continue practicing with diverse problems to strengthen your understanding and application skills.*
+
 
 
 
