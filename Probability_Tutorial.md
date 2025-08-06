@@ -379,24 +379,7 @@ If the probability of flipping heads on a coin is 0.5 and rolling a 4 on a die i
 If events are not independent (i.e., the outcome of one affects the other), you must use conditional probability instead:  
 \( P(A \cap B) = P(A) \times P(B|A) \)
 
-### 1. Addition Rule
 
-**For Mutually Exclusive Events:**
-```
-P(A ∪ B) = P(A) + P(B)
-```
-
-**For Non-Mutually Exclusive Events:**
-```
-P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
-```
-
-### 2. Multiplication Rule
-
-**For Independent Events:**
-```
-P(A ∩ B) = P(A) × P(B)
-```
 
 
 ## 5. More Real-Life Examples & Applications
@@ -1307,4 +1290,5 @@ In a game, Player 1 wins 60% of the time against Player 2. They play a best-of-5
 --- 
 
 *This tutorial provides a comprehensive foundation in probability theory. Continue practicing with diverse problems to strengthen your understanding and application skills.*
+
 
