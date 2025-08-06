@@ -159,76 +159,6 @@ Suppose you want to find the probability of drawing a heart from a standard deck
 **Classical Probability Formula:**  
 \( P(\text{Heart}) = \frac{13}{52} = 0.25 \)
 
-So, the probability of drawing a heart is 0.25, or 25%.
-
-A standard deck of playing cards has 52 cards.
-These cards are divided into 4 suits:
-
-- Hearts (♥)
-- Diamonds (♦)
-- Clubs (♣)
-- Spades (♠)
-
-Each suit has 13 cards:
-
-- Numbers: 2 through 10
-- Face cards: Jack, Queen, King
-- Ace: Usually considered as 1 or highest, depending on the game
-
-So, for example, the 13 hearts are: Ace of Hearts, 2 of Hearts, 3 of Hearts, ..., 10 of Hearts, Jack of Hearts, Queen of Hearts, King of Hearts.
-
-There are no duplicate cards in a standard deck.
-
-Jokers are sometimes included, but usually not counted in probability problems unless specified.
-
----
-
-### Sample Probability Questions
-
-**Easy Problem:**  
-What is the probability of drawing a King from a standard deck of 52 cards?
-
-**Solution:**  
-- Number of Kings in the deck = 4 (one per suit)
-- Total cards = 52  
-- Probability = 4/52 = 1/13 ≈ 0.077 (or 7.7%)
-
-**Example 2:**  
-What is the probability of drawing a red card from a standard deck of 52 cards?
-
-**Solution:**  
-- Number of red cards (hearts + diamonds) = 26  
-- Total cards = 52  
-- Probability = 26/52 = 1/2 = 0.5 (or 50%)
-
-**Example 3:**  
-What is the probability of drawing an Ace or a Queen from a standard deck of 52 cards?
-
-**Solution:**  
-- Number of Aces = 4  
-- Number of Queens = 4  
-- Total cards = 52  
-- Probability = (4 + 4)/52 = 8/52 = 2/13 ≈ 0.154 (or 15.4%)
-
-**Example 4:**  
-What is the probability of drawing a spade from a standard deck of 52 cards?
-
-**Solution:**  
-- Number of spades = 13  
-- Total cards = 52  
-- Probability = 13/52 = 1/4 = 0.25 (or 25%)
-
----
-
-**Difficult Problem:**  
-What is the probability of drawing two cards from a shuffled deck of 52 cards and both are face cards (Jack, Queen, or King), without replacement?
-
-**Solution:**  
-- Number of face cards = 3 per suit × 4 suits = 12
-- Probability first card is a face card = 12/52
-- Probability second card is a face card (after one face card removed) = 11/51  
-- Combined probability = (12/52) × (11/51) = (12 × 11) / (52 × 51) = 132 / 2652 ≈ 0.0498 (or 4.98%)
-- So, the probability is about 4.98%.
 
 ### 2. Experimental (Empirical) Probability
 This type is based on actual data from experiments or observations. It is calculated by performing an experiment multiple times and recording the frequency of each outcome.
@@ -1377,3 +1307,4 @@ In a game, Player 1 wins 60% of the time against Player 2. They play a best-of-5
 --- 
 
 *This tutorial provides a comprehensive foundation in probability theory. Continue practicing with diverse problems to strengthen your understanding and application skills.*
+
