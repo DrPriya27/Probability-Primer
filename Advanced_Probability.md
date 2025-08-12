@@ -250,6 +250,84 @@ If P(A ∩ B) = P(A) × P(B), events are independent; else, they are dependent.
 **A:**
 P(Working ∩ Present) = 0.80 × 0.60 = 0.48 or 48%
 
+**Q:**
+A coin is tossed twice. Let A be the event that the first toss is heads, and B be the event that the second toss is tails.
+
+Are A and B independent events?
+
+**A:**
+Yes, A and B are independent events because:
+
+P(A and B) = P(HT) = 1/4 = 0.25 P(A) = 1/2 = 0.5 P(B) = 1/2 = 0.5
+
+P(A and B) = P(A)P(B) = (0.5)(0.5) = 0.25
+
+**Q:**
+A deck of 52 cards is shuffled, and two cards are drawn at random with replacement. Let A be the event that the first card is a heart, and B be the event that the second card is a diamond.
+
+Are A and B independent events?
+
+**A:**
+Yes, A and B are independent events because:
+
+P(A and B) = P(Heart and Diamond) = (1/4)(1/4) = 1/16 = 0.0625 P(A) = 1/4 = 0.25 P(B) = 1/4 = 0.25
+
+P(A and B) = P(A)P(B) = (0.25)(0.25) = 0.0625
+
+**Q:**
+Two events A and B have the following probabilities:
+
+P(A) = 0.4 P(B) = 0.6 P(A and B) = 0.24
+
+Are A and B independent events?
+
+**A:**
+Yes, A and B are independent events because:
+
+P(A and B) = 0.24 P(A)P(B) = (0.4)(0.6) = 0.24
+
+**Q:**
+A factory produces two types of products, A and B. The probability that a product is of type A is 0.6, and the probability that a product is of type B is 0.4. The probability that a product is defective given that it is of type A is 0.1, and the probability that a product is defective given that it is of type B is 0.2.
+
+Are the events "product is of type A" and "product is defective" independent?
+
+**A:**
+No, the events "product is of type A" and "product is defective" are not independent because:
+
+P(Defective|A) = 0.1 ≠ P(Defective) = (0.1)(0.6) + (0.2)(0.4) / 1 = 0.14
+
+**Q:**
+A medical test has a 90% chance of detecting a disease if the patient has it (sensitivity), and a 10% chance of giving a false positive result if the patient does not have the disease (specificity). The prevalence of the disease in the population is 1%.
+
+Are the events "patient has the disease" and "patient tests positive" independent?
+
+**A:**
+No, the events "patient has the disease" and "patient tests positive" are not independent because:
+
+P(Positive|Disease) = 0.9 ≠ P(Positive) = (0.9)(0.01) + (0.1)(0.99) = 0.108
+
+**Q:**
+Two events A and B have the following joint probability table:
+
+B = 0	B = 1
+A = 0	0.4	0.3
+A = 1	0.2	0.1
+Are A and B independent events?
+
+**A:**
+No, A and B are not independent events because:
+
+P(A = 1 and B = 1) = 0.1 ≠ P(A = 1)P(B = 1) = (0.3)(0.4) = 0.12
+
+**Q:**
+A box contains 5 red balls and 3 blue balls. Two balls are drawn at random without replacement. Let A be the event that the first ball is red, and B be the event that the second ball is blue.
+
+Are A and B independent events?
+
+**A:** No, A and B are not independent events because:
+
+P(A and B) = 15/56 ≠ P(A)P(B) = (5/8)(3/8) = 15/64
+
 ---
 
 ## Bayes’ Theorem
@@ -351,6 +429,7 @@ P(Cond|Pos) = (0.90 × 0.02) / 0.0964 ≈ 0.187 or 18.7%
 ---
 
 **End of Notes**
+
 
 
 
