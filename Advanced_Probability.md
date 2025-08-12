@@ -72,45 +72,35 @@ What is the probability that a randomly selected student likes:
 
 a) Pizza and sushi? b) Pizza or sushi? c) Neither pizza nor sushi?
 
-**A:**
-
-a) P(Pizza and Sushi) = 20/100 = 0.2 b) P(Pizza or Sushi) = P(Pizza) + P(Sushi) - P(Pizza and Sushi) = 0.6 + 0.4 - 0.2 = 0.8 c) P(Neither Pizza nor Sushi) = 1 - P(Pizza or Sushi) = 1 - 0.8 = 0.2
+**A:** a) P(Pizza and Sushi) = 20/100 = 0.2 b) P(Pizza or Sushi) = P(Pizza) + P(Sushi) - P(Pizza and Sushi) = 0.6 + 0.4 - 0.2 = 0.8 c) P(Neither Pizza nor Sushi) = 1 - P(Pizza or Sushi) = 1 - 0.8 = 0.2
 
 **Q:**
 A coin is tossed twice. Let A be the event that the first toss is heads, and B be the event that the second toss is tails.
 
 a) What is P(A and B)? b) What is P(A or B)? c) Are A and B independent events?
 
-**A:**
-
-a) P(A and B) = P(HT) = 1/4 = 0.25 b) P(A or B) = P(A) + P(B) - P(A and B) = 0.5 + 0.5 - 0.25 = 0.75 c) Yes, A and B are independent events because P(A and B) = P(A)P(B) = (0.5)(0.5) = 0.25
+**A:** a) P(A and B) = P(HT) = 1/4 = 0.25 b) P(A or B) = P(A) + P(B) - P(A and B) = 0.5 + 0.5 - 0.25 = 0.75 c) Yes, A and B are independent events because P(A and B) = P(A)P(B) = (0.5)(0.5) = 0.25
 
 **Q:**
 A deck of 52 cards is shuffled, and two cards are drawn at random. Let A be the event that the first card is a heart, and B be the event that the second card is a diamond.
 
 a) What is P(A and B)? b) What is P(A or B)? c) Are A and B independent events?
 
-**A:**
-
-a) P(A and B) = P(Heart and Diamond) = (13/52)(13/51) = 13/204 ≈ 0.0637 b) P(A or B) = P(A) + P(B) - P(A and B) = 0.25 + 0.25 - 0.0637 ≈ 0.4363 c) Yes, A and B are approximately independent events because the deck is large and the probability of drawing a heart and then a diamond is close to the product of the individual probabilities.
+**A:** a) P(A and B) = P(Heart and Diamond) = (13/52)(13/51) = 13/204 ≈ 0.0637 b) P(A or B) = P(A) + P(B) - P(A and B) = 0.25 + 0.25 - 0.0637 ≈ 0.4363 c) Yes, A and B are approximately independent events because the deck is large and the probability of drawing a heart and then a diamond is close to the product of the individual probabilities.
 
 **Q:**
 A factory produces two types of products, A and B. The probability that a product is of type A is 0.6, and the probability that a product is of type B is 0.4. The probability that a product is defective given that it is of type A is 0.1, and the probability that a product is defective given that it is of type B is 0.2.
 
 a) What is the probability that a randomly selected product is defective and of type A? b) What is the probability that a randomly selected product is defective and of type B? c) What is the overall probability that a randomly selected product is defective?
 
-**A:**
-
-a) P(Defective and A) = P(Defective|A)P(A) = (0.1)(0.6) = 0.06 b) P(Defective and B) = P(Defective|B)P(B) = (0.2)(0.4) = 0.08 c) P(Defective) = P(Defective and A) + P(Defective and B) = 0.06 + 0.08 = 0.14
+**A:** a) P(Defective and A) = P(Defective|A)P(A) = (0.1)(0.6) = 0.06 b) P(Defective and B) = P(Defective|B)P(B) = (0.2)(0.4) = 0.08 c) P(Defective) = P(Defective and A) + P(Defective and B) = 0.06 + 0.08 = 0.14
 
 **Q:**
 A medical test has a 90% chance of detecting a disease if the patient has it (sensitivity), and a 10% chance of giving a false positive result if the patient does not have the disease (specificity). The prevalence of the disease in the population is 1%.
 
 a) What is the probability that a patient tests positive and actually has the disease? b) What is the probability that a patient tests positive but does not have the disease? c) What is the overall probability that a patient tests positive?
 
-**A:**
-
-a) P(Disease and Positive) = P(Positive|Disease)P(Disease) = (0.9)(0.01) = 0.009 b) P(No Disease and Positive) = P(Positive|No Disease)P(No Disease) = (0.1)(0.99) = 0.099 c) P(Positive) = P(Disease and Positive) + P(No Disease and Positive) = 0.009 + 0.099 = 0.108
+**A:** a) P(Disease and Positive) = P(Positive|Disease)P(Disease) = (0.9)(0.01) = 0.009 b) P(No Disease and Positive) = P(Positive|No Disease)P(No Disease) = (0.1)(0.99) = 0.099 c) P(Positive) = P(Disease and Positive) + P(No Disease and Positive) = 0.009 + 0.099 = 0.108
 
 **Q:**
 Two events A and B have the following joint probability table:
@@ -120,18 +110,14 @@ A = 0	0.4	0.3
 A = 1	0.2	0.1
 a) What is P(A = 1 and B = 1)? b) What is P(A = 1 or B = 1)? c) Are A and B independent events?
 
-**A:**
-
-a) P(A = 1 and B = 1) = 0.1 b) P(A = 1 or B = 1) = P(A = 1) + P(B = 1) - P(A = 1 and B = 1) = 0.3 + 0.4 - 0.1 = 0.6 c) No, A and B are not independent events because P(A = 1 and B = 1) ≠ P(A = 1)P(B = 1)
+**A:** a) P(A = 1 and B = 1) = 0.1 b) P(A = 1 or B = 1) = P(A = 1) + P(B = 1) - P(A = 1 and B = 1) = 0.3 + 0.4 - 0.1 = 0.6 c) No, A and B are not independent events because P(A = 1 and B = 1) ≠ P(A = 1)P(B = 1)
 
 **Q:**
 A box contains 5 red balls and 3 blue balls. Two balls are drawn at random without replacement. Let A be the event that the first ball is red, and B be the event that the second ball is blue.
 
 a) What is P(A and B)? b) What is P(A or B)? c) Are A and B independent events?
 
-**A:**
-
-a) P(A and B) = P(Red and Blue) = (5/8)(3/7) = 15/56 ≈ 0.2679 b) P(A or B) = P(A) + P(B) - P(A and B) = 5/8 + 3/8 - 15/56 ≈ 0.7857 c) No, A and B are not independent events because the probability of drawing a blue ball changes after drawing a red ball.
+**A:** a) P(A and B) = P(Red and Blue) = (5/8)(3/7) = 15/56 ≈ 0.2679 b) P(A or B) = P(A) + P(B) - P(A and B) = 5/8 + 3/8 - 15/56 ≈ 0.7857 c) No, A and B are not independent events because the probability of drawing a blue ball changes after drawing a red ball.
 
 ---
 
@@ -303,4 +289,5 @@ P(Cond|Pos) = (0.90 × 0.02) / 0.0964 ≈ 0.187 or 18.7%
 ---
 
 **End of Notes**
+
 
