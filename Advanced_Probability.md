@@ -150,6 +150,68 @@ What is the probability that a student passed Science, **given** they passed Mat
 **A:**
 P(SQL | Python) = P(Python ∩ SQL) / P(Python) = 0.40 / 0.70 ≈ 0.571 or 57.1%
 
+**Q:**
+A survey of 100 students found that:
+
+60 students like pizza
+40 students like sushi
+20 students like both pizza and sushi
+What is the probability that a student likes sushi given that they like pizza?
+
+**A:**
+P(Sushi|Pizza) = P(Sushi and Pizza) / P(Pizza) = 20/60 = 1/3 ≈ 0.3333
+
+**Q:**
+A coin is tossed twice. Let A be the event that the first toss is heads, and B be the event that the second toss is tails.
+
+What is the probability that the second toss is tails given that the first toss is heads?
+
+**A:**
+P(B|A) = P(A and B) / P(A) = (1/4) / (1/2) = 1/2 = 0.5
+
+**Q:**
+A deck of 52 cards is shuffled, and one card is drawn at random. Let A be the event that the card is a heart, and B be the event that the card is a face card.
+
+What is the probability that the card is a face card given that it is a heart?
+
+**A:**
+P(B|A) = P(A and B) / P(A) = (3/52) / (13/52) = 3/13 ≈ 0.2308
+
+**Q:**
+A factory produces two types of products, A and B. The probability that a product is of type A is 0.6, and the probability that a product is of type B is 0.4. The probability that a product is defective given that it is of type A is 0.1, and the probability that a product is defective given that it is of type B is 0.2.
+
+What is the probability that a product is of type A given that it is defective?
+
+**A:**
+P(A|Defective) = P(Defective|A)P(A) / P(Defective) = (0.1)(0.6) / ((0.1)(0.6) + (0.2)(0.4)) = 0.06 / 0.14 ≈ 0.4286
+
+**Q:**
+A medical test has a 90% chance of detecting a disease if the patient has it (sensitivity), and a 10% chance of giving a false positive result if the patient does not have the disease (specificity). The prevalence of the disease in the population is 1%.
+
+What is the probability that a patient has the disease given that they test positive?
+
+**A:**
+P(Disease|Positive) = P(Positive|Disease)P(Disease) / P(Positive) = (0.9)(0.01) / ((0.9)(0.01) + (0.1)(0.99)) ≈ 0.0833
+
+**Q:**
+Two events A and B have the following joint probability table:
+
+B = 0	B = 1
+A = 0	0.4	0.3
+A = 1	0.2	0.1
+What is the probability that A = 1 given that B = 1?
+
+**A:**
+P(A = 1|B = 1) = P(A = 1 and B = 1) / P(B = 1) = 0.1 / 0.4 = 1/4 = 0.25
+
+**Q:**
+A box contains 5 red balls and 3 blue balls. Two balls are drawn at random without replacement. Let A be the event that the first ball is red, and B be the event that the second ball is blue.
+
+What is the probability that the first ball is red given that the second ball is blue?
+
+**A:**
+P(A|B) = P(A and B) / P(B) = (15/56) / (3/8) = 15/21 ≈ 0.7143
+
 ---
 
 ## Independent Events
@@ -289,5 +351,6 @@ P(Cond|Pos) = (0.90 × 0.02) / 0.0964 ≈ 0.187 or 18.7%
 ---
 
 **End of Notes**
+
 
 
